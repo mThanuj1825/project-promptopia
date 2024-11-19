@@ -2,9 +2,9 @@
 
 import Form from "@components/Form";
 import { useRouter, useSearchParams } from "@node_modules/next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
-function page() {
+function Update() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [submitting, setSubmitting] = useState(false);
@@ -64,6 +64,14 @@ function page() {
       submitting={submitting}
       handleSubmit={editPrompt}
     />
+  );
+}
+
+function page() {
+  return (
+    <Suspense>
+      <Update />
+    </Suspense>
   );
 }
 
