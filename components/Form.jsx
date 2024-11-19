@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 function Form({ type, post, setPost, submitting, handleSubmit }) {
